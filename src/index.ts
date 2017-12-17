@@ -25,8 +25,8 @@ const createChildEnv = (texInputs: string[] = []) =>
   // Prepend given texInputs
   set(process.env, _ => _.TEXINPUTS)((TEXINPUTS = '') =>
     [
-      // Transform relative paths in absolute paths
-      ...texInputs.map(path => resolve(process.cwd(), path)),
+      // Transform relative paths in absolute paths (but don't transform absolute paths)
+      ...texInputs.map(path => path[0] === '/' ? path : resolve(process.cwd(), path)),
       ...TEXINPUTS.split(':')
     ]
       // Append colon to use default paths too
