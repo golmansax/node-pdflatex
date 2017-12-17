@@ -1,5 +1,6 @@
 /.vscode
-/lib
+#/lib
+/lib/*.js.map
 /node_modules
 package-lock.json
 yarn.lock
