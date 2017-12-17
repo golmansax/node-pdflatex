@@ -1,5 +1,5 @@
 /.vscode
-/src
+#/src
 /.editorconfig
 /yarn.lock
 /tsconfig.json
